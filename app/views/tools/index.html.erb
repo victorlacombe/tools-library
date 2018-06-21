@@ -1,7 +1,18 @@
-<% @tools.each do |tool| %>
-  <%= tool.name %> <br>
-  <%= tool.description %> <br>
-  <%= tool.website_url %> <br>
-  <br>
-<% end %>
+<div class="container centered-card">
+  <h1>Your best tools, to rocket to the sky</h1>
+  <div class="row">
+    <% @tools.each do |tool| %>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="card">
+          <%= tool.name %> <br>
+          <%= tool.description %> <br>
+          <%= tool.website_url %> <br>
+          <br>
+          <%= link_to "", tool_path(tool), class: "card-link" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
+<%= link_to "Home sweet home", root_path, class: "btn-primary" %>

@@ -1,0 +1,15 @@
+.card {
+  height: 150px;
+  margin: 10px;
+  box-shadow: 1px 1px 1px lightgrey;
+  background-color: white;
+  position: relative;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
