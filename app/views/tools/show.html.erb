@@ -1,3 +1,4 @@
-<%= @tool.name %> <br>
+<%= image_tag @tool.image_url, size: "70x70" %> <br>
+<%= link_to @tool.name, @tool.website_url %> <br>
 <%= @tool.description %> <br>
 <%= @tool.website_url %> <br>
