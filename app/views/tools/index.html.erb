@@ -4,9 +4,9 @@
     <% @tools.each do |tool| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card">
+          <%= image_tag tool.image_url, size: "70x70" %> <br>
           <%= tool.name %> <br>
           <%= tool.description %> <br>
-          <%= tool.website_url %> <br>
           <br>
           <%= link_to "", tool_path(tool), class: "card-link" %>
         </div>
