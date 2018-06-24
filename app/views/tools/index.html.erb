@@ -7,10 +7,13 @@
     <% @tools.each do |tool| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card">
-          <%= image_tag tool.image_url, size: "70x70" %> <br>
-          <%= tool.name %> <br>
-          <%= tool.description %> <br>
-          <br>
+          <div class="card-components text-center">
+            <div>
+              <%= image_tag tool.image_url, size: "70x70" %>
+            </div>
+            <p> <%= tool.name %> </p>
+            <p> <%= tool.description %> </p>
+          </div>
           <%= link_to "", tool_path(tool), class: "card-link" %>
         </div>
       </div>
