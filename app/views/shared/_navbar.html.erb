@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Add a super tool", "#", class: "navbar-wagon-item navbar-wagon-link btn-warning" %>
+      <%= link_to "Add a super tool", new_tool_path, class: "navbar-wagon-item navbar-wagon-link btn-warning" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
