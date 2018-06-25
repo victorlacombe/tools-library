@@ -10,7 +10,13 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Add a super tool", new_tool_path, class: "navbar-wagon-item navbar-wagon-link btn-warning" %>
+
+      <!-- Button trigger modal -->
+      <% if params[:action] === "index" %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Add a tool
+        </button>
+      <% end %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

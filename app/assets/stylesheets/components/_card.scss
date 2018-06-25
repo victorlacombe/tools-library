@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .card-components {
@@ -23,4 +24,10 @@
   bottom: 0;
   left: 0;
   width: 100%;
+}
+
+.separation-line {
+  border-top: 1px solid black;
+  width: 90%;
+  margin: 15px 0;
 }

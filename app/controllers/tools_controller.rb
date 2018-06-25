@@ -2,6 +2,7 @@ class ToolsController < ApplicationController
 
   def index
     @tools = Tool.all
+    @tool = Tool.new
   end
 
   def show
@@ -13,7 +14,7 @@ class ToolsController < ApplicationController
   end
 
   def create
-    @tool = Tool.new(tools_params)
+    @tool = Tool.new(tool_params)
     @tool.user = current_user
     if @tool.save
       redirect_to tool_path(@tool)
@@ -22,10 +23,18 @@ class ToolsController < ApplicationController
     end
   end
 
+  def edit
+    @tool = Tool.find(params[:id])
+  end
+
+  def update
+    @tool = Tool.find(params[:id])
+  end
+
   private
 
-  def tools_params
-    params.require(:tool).permit(:name, :description, :website_url, :image_url)
+  def tool_params
+    params.require(:tool).permit(:name, :description, :website_url, :image_url, :chrome_extension_url)
   end
 
 end
