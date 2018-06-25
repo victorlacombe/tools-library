@@ -11,14 +11,14 @@
       <div class="modal-body">
         <%= simple_form_for @tool do |f|%>
           <%= f.input :name, class: "form-control"%>
-          <%= f.input :description, class: "form-control", style: { resize: "none", color: "red" }%>
+          <%= f.input :description, class: "form-control" %>
           <%= f.input :website_url, class: "form-control"%>
           <%= f.input :chrome_extension_url, class: "form-control"%>
           <%= f.input :image_url, class: "form-control"%>
       </div>
       <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <%=  f.submit "Add to library", class: "btn btn-secondary" %>
+          <%=  f.submit "Save", class: "btn btn-secondary" %>
       </div>
         <% end %>
     </div>

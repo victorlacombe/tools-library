@@ -1,7 +1,6 @@
 <div class="container centered-card">
   <div class="tools-page-header">
     <h1>Your best tools, to rocket to the sky</h1>
-    <%= link_to "Home sweet home", root_path, class: "btn-primary" %>
   </div>
   <div class="row">
     <% @tools.each do |tool| %>
@@ -23,4 +22,4 @@
 </div>
 
 
-<%= render "shared/new_tool_modal" %>
+<%= render "shared/tool_modal" %>

@@ -1,7 +1,7 @@
 class ToolsController < ApplicationController
 
   def index
-    @tools = Tool.all
+    @tools = Tool.all.order(:id)
     @tool = Tool.new
   end
 
@@ -29,6 +29,8 @@ class ToolsController < ApplicationController
 
   def update
     @tool = Tool.find(params[:id])
+    @tool.update(tool_params)
+    redirect_to tool_path(@tool)
   end
 
   private
