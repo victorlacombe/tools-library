@@ -7,10 +7,11 @@
     <% @tools.each do |tool| %>
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card">
+          <div class="card-header">
+            <%= image_tag tool.image_url, size: "70x70" %>
+          </div>
+          <div class="separation-line"></div>
           <div class="card-components text-center">
-            <div>
-              <%= image_tag tool.image_url, size: "70x70" %>
-            </div>
             <p> <%= tool.name %> </p>
             <p> <%= tool.description %> </p>
           </div>
@@ -22,3 +23,4 @@
 </div>
 
 
+<%= render "shared/new_tool_modal" %>
