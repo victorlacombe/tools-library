@@ -1,6 +1,6 @@
 class Tool < ApplicationRecord
   belongs_to :user
-  has_many :tags
+  has_many :tags, dependent: :destroy
 
   def formatting_tool_description(tool)
     first_word = tool.description.downcase.split(" ").first.capitalize
