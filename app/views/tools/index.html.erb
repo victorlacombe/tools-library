@@ -7,7 +7,7 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card">
           <div class="card-header">
-            <%= image_tag tool.image_url, size: "70x70" %>
+            <%= image_tag "//logo.clearbit.com/#{tool.website_url.match(/https:\/\/(.*)\//)[1]}", style: "height: 70px"%>
           </div>
           <div class="separation-line"></div>
           <div class="card-components text-center">
