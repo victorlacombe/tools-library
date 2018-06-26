@@ -1,22 +1,19 @@
-<div class="wrapper">
-  <div class="container">
-    <div class="show-card">
-      <div class="row">
-        <div class="col">
-          <div class="show-card-header">
-            <p id="tagline"><%= @tool.description %></p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="show-card-components">
-            <%= image_tag "//logo.clearbit.com/#{@tool.website_url.match(/https:\/\/(.*)\//)[1]}", style: "height: 70px"%> <br>
-            <p><%= link_to @tool.name, @tool.website_url %></p>
-            <p><%= @tool.website_url %></p>
-          </div>
-        </div>
-      </div>
+<div class="wrapper show-card-wrapper">
+  <div class="container show-card-container">
+    <div class="show-card-header">
+      <p id="tagline"><%= @tool.formatting_tool_description(@tool) %></p>
+    </div>
+    <div class="show-card-components">
+      <p id="card-components-left">
+        <%= image_tag "//logo.clearbit.com/#{@tool.website_url.match(/https:\/\/(.*)\//)[1]}"%> <br>
+        <%= link_to @tool.formatting_tool_name(@tool), @tool.website_url %>
+      </p>
+      <p id="card-components-center">
+        Connect Your Apps and Automate Workflows. Easy automation for busy people. Zapier moves info between your web apps automatically, so you can focus on your most important work.
+      </p>
+      <p id="card-components-rigth">
+        <%= @tool.website_url %>
+      </p>
     </div>
   </div>
 </div>

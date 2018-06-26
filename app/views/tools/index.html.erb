@@ -11,7 +11,7 @@
           </div>
           <div class="separation-line"></div>
           <div class="card-components text-center">
-            <p> <%= tool.name %> </p>
+            <p> <%= tool.formatting_tool_name(tool) %> </p>
             <p> <%= tool.description %> </p>
           </div>
           <%= link_to "", tool_path(tool), class: "card-link" %>

@@ -9,7 +9,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  position: relative; /*needed to position the link over the whole card*/
 }
+
+/*------------------------------ CARD COMPONENTS ------------------------------*/
 
 .card-components {
   display: flex;
@@ -17,6 +21,8 @@
   align-items: center;
   justify-content: center;
 }
+
+/*--------------------------------- CARD LINKS ---------------------------------*/
 
 .card-link {
   position: absolute;
@@ -26,18 +32,10 @@
   width: 100%;
 }
 
+/*-------------------------------- SEPARATION LINE -----------------------------*/
+
 .separation-line {
   border-top: 1px solid black;
   width: 90%;
   margin: 15px 0;
-}
-
-.show-card {
-  background: white;
-  height: 500px;
-
-  #tagline {
-    font-size: 50px;
-    font-family: arial black
-  }
 }
