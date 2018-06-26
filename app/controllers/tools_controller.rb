@@ -1,9 +1,13 @@
 class ToolsController < ApplicationController
 
   def index
-    @tools = Tool.all.order(:id)
     # needed for the modal form (create a new tool)
     @tool = Tool.new
+     if params[:query].present?
+      @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @tools = Tool.all.order(:id)
+    end
   end
 
   def show

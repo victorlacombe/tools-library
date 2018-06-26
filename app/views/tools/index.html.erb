@@ -1,6 +1,9 @@
 <div class="container centered-card">
   <div class="tools-page-header">
     <h1>Your best tools, to rocket to the sky</h1>
+    <%= form_tag tools_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control search-bar", placeholder: "Need a tool?" %>
+    <% end %>
   </div>
   <div class="row">
     <% @tools.each do |tool| %>
