@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount ForestLiana::Engine => '/forest'
   get 'tags/index'
   get 'tags/show'
   get 'tags/new'
