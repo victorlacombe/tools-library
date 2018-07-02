@@ -16,5 +16,6 @@
       </p>
     </div>
   </div>
+  <%= link_to "Delete", tool_path(@tool), data: { confirm: "Are you sure?" }, method: :delete %></p>
 </div>
 <%= render "shared/tool_modal" %>

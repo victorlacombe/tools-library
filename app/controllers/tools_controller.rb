@@ -40,6 +40,12 @@ class ToolsController < ApplicationController
     redirect_to tool_path(@tool)
   end
 
+  def destroy
+    @tool = Tool.find(params[:id])
+    @tool.delete
+    redirect_to tools_path
+  end
+
   private
 
   def tool_params
