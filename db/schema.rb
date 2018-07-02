@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2018_07_02_111855) do
     t.string "image_url"
     t.string "website_url"
     t.string "chrome_extension_url"
-    t.text "long_description"
+    t.string "long_description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
