@@ -16,11 +16,13 @@ class ToolsController < ApplicationController
 
   def new
     @tool = Tool.new
+    @tag = Tag.new
   end
 
   def create
     @tool = Tool.new(tool_params)
     @tool.user = current_user
+
     if @tool.save
       redirect_to tool_path(@tool)
     else
@@ -41,7 +43,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :description, :website_url, :image_url, :chrome_extension_url)
+    params.require(:tool).permit(:name, :tagline, :website_url, :image_url, :chrome_extension_url)
   end
-
 end
