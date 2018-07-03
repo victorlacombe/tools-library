@@ -19,6 +19,7 @@
           </div>
           <%= link_to "", tool_path(tool), class: "card-link" %>
         </div>
+        <%= link_to "", tool_path(tool), class: "far fa-times-circle card-delete-button", data: { confirm: "Delete this tool?" }, method: :delete %></p>
       </div>
     <% end %>
   </div>

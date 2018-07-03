@@ -15,7 +15,9 @@
         <%= @tool.website_url %>
       </p>
     </div>
+    <%= link_to "", tool_path(@tool), class: "far fa-times-circle show-card-delete-button", data: { confirm: "Delete this tool?" }, method: :delete %></p>
   </div>
-  <%= link_to "Delete", tool_path(@tool), data: { confirm: "Are you sure?" }, method: :delete %></p>
 </div>
 <%= render "shared/tool_modal" %>
+
+<i class="far fa-times-circle"></i>

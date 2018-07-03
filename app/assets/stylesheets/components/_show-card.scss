@@ -6,6 +6,7 @@
 /*------------------------------ CARD CONTAINER ------------------------------*/
 
 .show-card-container {
+  position: relative;
   background: white;
   min-height: 500px;
   box-shadow: 1px 1px 8px #33333385;
@@ -63,6 +64,14 @@
   #card-components-center {
     text-align: justify;
   }
+}
+
+/*---------------------------- CARD DELETE BUTTON ----------------------------*/
+
+.show-card-delete-button {
+  position: absolute;
+  top: 6px;
+  right: 10px;
 }
 
 
