@@ -22,6 +22,13 @@
   justify-content: center;
 }
 
+.card-delete-button {
+  position: absolute;
+  top: 6px;
+  right: 23px;
+  color: rgba(200, 200, 250, 0.2)
+}
+
 /*--------------------------------- CARD LINKS ---------------------------------*/
 
 .card-link {

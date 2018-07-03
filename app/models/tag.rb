@@ -1,3 +1,5 @@
 class Tag < ApplicationRecord
-  belongs_to :tool
+  belongs_to :tool, dependent: :destroy
 end
+
+
