@@ -4,7 +4,8 @@ class ToolsController < ApplicationController
     # needed for the modal form (create a new tool)
     @tool = Tool.new
      if params[:query].present?
-      @tools = Tool.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR tagline ILIKE :query"
+      @tools = Tool.where(sql_query, query: "%#{params[:query]}%")
     else
       @tools = Tool.all.order(:id)
     end
@@ -16,7 +17,6 @@ class ToolsController < ApplicationController
 
   def new
     @tool = Tool.new
-    @tag = Tag.new
   end
 
   def create
@@ -49,6 +49,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :tagline, :website_url, :image_url, :chrome_extension_url)
+    params.require(:tool).permit(:name, :tagline, :website_url, :image_url, :chrome_extension_url, :description)
   end
 end
