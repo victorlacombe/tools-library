@@ -8,7 +8,7 @@
 .show-card-container {
   position: relative;
   background: white;
-  min-height: 500px;
+  height: 500px;
   box-shadow: 1px 1px 8px #33333385;
   border-radius: 4px;
 }
@@ -30,7 +30,6 @@
   }
 
 }
-
 
 .show-card-components {
     min-height: 300px;
@@ -84,3 +83,15 @@
     grid-template-rows: 3fr;
   }
 }
+
+@media (max-width: 1000px) {
+.show-card-container{
+    height: 800px;
+  }
+}
+
+
+
+
+
+
