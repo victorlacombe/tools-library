@@ -9,7 +9,7 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card">
           <div class="card-header">
-            <%= image_tag "//logo.clearbit.com/#{tool.website_url.match(/(https|http):\/\/(.*)\//)[2]}", style: "height: 70px"%>
+            <%= image_tag "//logo.clearbit.com/#{tool.website_url.match(/^(https?:\/\/)?([\da-z\.-]+\.[a-z\.]{2,6})([\/\w \.-]*)*\/?$/)[2]}", style: "height: 70px"%>
           </div>
           <div class="separation-line"></div>
           <div class="card-components text-center">
