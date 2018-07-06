@@ -5,7 +5,7 @@
     </div>
     <div class="show-card-components">
       <p id="card-components-left">
-        <%= image_tag "//logo.clearbit.com/#{@tool.website_url.match(/(https|http):\/\/(.*)\//)[2]}"%> <br>
+        <%= image_tag "//logo.clearbit.com/#{@tool.website_url.match(/^(https?:\/\/)?([\da-z\.-]+\.[a-z\.]{2,6})([\/\w \.-]*)*\/?$/)[2]}"%> <br>
         <%= link_to @tool.formatting_tool_name(@tool), @tool.website_url %>
       </p>
       <p id="card-components-center">
