@@ -18,6 +18,8 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'clearbit'
+gem 'omniauth'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
