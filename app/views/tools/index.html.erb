@@ -9,19 +9,33 @@
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="card">
           <div class="card-header">
-            <%= image_tag "//logo.clearbit.com/#{tool.website_url.match(/^(https?:\/\/)?([\da-z\.-]+\.[a-z\.]{2,6})([\/\w \.-]*)*\/?$/)[2]}", style: "height: 70px"%>
+            <%= image_tag "//logo.clearbit.com/#{tool.format_website_url}", style: "height: 70px"%>
           </div>
           <div class="separation-line"></div>
           <div class="card-components text-center">
-            <p> <%= tool.formatting_tool_name(tool) %> </p>
-            <p> <%= tool.tagline %> </p>
+            <% if tool.clearbit_enrichment["name"].nil? %>
+              <p> <%= tool.clearbit_enrichment["domain"] %> </p>
+            <% else %>
+              <p> <%= tool.clearbit_enrichment["name"] %> </p>
+            <% end %>
+            <p>
+              <% tool.clearbit_enrichment["tags"].first(3).each do |tag| %>
+                <%= tag %>
+              <% end %>
+            </p>
           </div>
           <%= link_to "", tool_path(tool), class: "card-link" %>
         </div>
         <%= link_to "", tool_path(tool), class: "far fa-times-circle card-delete-button", data: { confirm: "Delete this tool?" }, method: :delete %></p>
       </div>
+
     <% end %>
   </div>
 </div>
 
+
+
 <%= render "shared/tool_modal" %>
+
+
+
