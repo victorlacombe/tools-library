@@ -17,9 +17,6 @@ class Tool < ApplicationRecord
 
   def clearbit_enrichment
     domain_name = self.format_website_url
-    # url = "https://company.clearbit.com/v2/companies/find?domain=#{domain_name}"
-    # serialized_file = open(url, http_basic_authentication: "sk_ec120cdba5dd2b099a206c5a93c4a1c6").read
-    # file = JSON.parse(serialized_file)
     Clearbit.key = ENV['CLEARBIT_KEY']
     company = Clearbit::Enrichment::Company.find(domain: domain_name)
   end
