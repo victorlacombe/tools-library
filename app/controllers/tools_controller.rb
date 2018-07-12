@@ -4,7 +4,7 @@ class ToolsController < ApplicationController
     # needed for the modal form (create a new tool)
     @tool = Tool.new
      if params[:query].present?
-      sql_query = "name ILIKE :query OR tagline ILIKE :query"
+      sql_query = "name ILIKE :query OR description ILIKE :query"
       @tools = Tool.where(sql_query, query: "%#{params[:query]}%")
     else
       @tools = Tool.all.order(:id)
@@ -24,6 +24,34 @@ class ToolsController < ApplicationController
     @tool.user = current_user
 
     if @tool.save
+
+      # ------ Enriching the creacted tool with Clearbit API ------
+
+      # Name
+      if @tool.clearbit_enrichment["name"].nil?
+        @tool.update(name: @tool.clearbit_enrichment["domain"])
+      else
+        @tool.update(name: @tool.clearbit_enrichment["name"])
+      end
+
+      # Tags
+      # @tool.update(tagline: @tool.clearbit_enrichment["tags"])
+
+      # Description
+      if @tool.clearbit_enrichment["description"].nil?
+        @tool.update(description: @tool.clearbit_enrichment["domain"])
+      else
+        @tool.update(description: @tool.clearbit_enrichment["description"])
+      end
+
+      # Image URL
+      if @tool.clearbit_enrichment["logo"].nil?
+        @tool.update(image_url: "no_logo_logo.png")
+      else
+        @tool.update(image_url: @tool.clearbit_enrichment["logo"])
+      end
+
+      # ------ Redirecting to the tool that was created -------
       redirect_to tool_path(@tool)
     else
       render :new
@@ -49,6 +77,6 @@ class ToolsController < ApplicationController
   private
 
   def tool_params
-    params.require(:tool).permit(:name, :tagline, :website_url, :image_url, :chrome_extension_url, :description)
+    params.require(:tool).permit(:website_url)
   end
 end
