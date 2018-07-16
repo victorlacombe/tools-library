@@ -1,0 +1,22 @@
+.centered-form {
+    width: 50%;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+#tool_website_url {
+  border-radius: 25px;
+  height: 10vw;
+  text-align: center;
+  font-size: 3vw;
+}
+
+#new_tool {
+  display: flex;
+  justify-content: space-between;
+}

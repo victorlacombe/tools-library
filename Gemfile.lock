@@ -93,6 +93,8 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
     jsonapi-serializers (1.0.1)
       activesupport
     jwt (2.1.0)
@@ -235,6 +237,7 @@ DEPENDENCIES
   font-awesome-sass (~> 5.0.9)
   forest_liana
   jbuilder (~> 2.0)
+  jquery-ui-rails
   listen (~> 3.0.5)
   omniauth
   pg (~> 0.21)
@@ -255,4 +258,4 @@ RUBY VERSION
    ruby 2.4.4p296
 
 BUNDLED WITH
-   1.16.1
+   1.16.2

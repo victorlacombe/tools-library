@@ -20,6 +20,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'clearbit'
 gem 'omniauth'
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
