@@ -15,13 +15,9 @@
 
       <!-- Button trigger modal -->
       <% if params[:action] === "index" %>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-          Add a tool
-        </button>
+        <%= link_to "Add a tool", new_tool_path %>
       <% elsif params[:action] === "show" %>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-          Edit
-        </button>
+        <%= link_to "Add a tool", tools_path %>
       <% end %>
 
       <!-- Avatar with dropdown menu -->
@@ -48,9 +44,17 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-        <% end %>
+        <li>
+          <%= link_to "All Tools", tools_path %>
+        </li>
+        <li>
+          <%= link_to "Add Tool", new_tool_path %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= t(".sign_out", default: "Log out") %>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>
