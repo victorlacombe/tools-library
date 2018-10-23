@@ -1,29 +1,13 @@
 <div class="wrapper show-card-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-xs-10 col-xs-offset-1">
+      <div class="col-xs-8 col-xs-offset-2">
         <div class="show-card-container">
-          <div class="tags-section">
-          </div>
           <div class="show-card-components">
             <p id="card-components-top">
               <%= image_tag @tool.image_url %> <br>
               <%= link_to @tool.formatting_tool_name(@tool), @tool.website_url %>
             </p>
-            <div class="card-components-sub-section">
-              <p id="card-components-center">
-                <%= @tool.description %>
-              </p>
-              <p id="card-components-bottom">
-                Some content to test css
-                Some content to test css
-                Some content to test css
-                Some content to test css
-                Some content to test css
-                Some content to test css
-
-              </p>
-            </div>
           </div>
           <%= link_to "", tool_path(@tool), class: "far fa-times-circle show-card-delete-button", data: { confirm: "Delete this tool?" }, method: :delete %></p>
         </div>

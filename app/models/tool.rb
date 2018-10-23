@@ -15,15 +15,16 @@ class Tool < ApplicationRecord
     tool.name.downcase.capitalize
   end
 
-  def clearbit_enrichment
-    domain_name = self.format_website_url
-    Clearbit.key = ENV['CLEARBIT_KEY']
-    company = Clearbit::Enrichment::Company.find(domain: domain_name)
-  end
 
   def format_website_url
     url = self.website_url
     url.match(/^(https?:\/\/)?([\da-z\.-]+\.[a-z\.]{2,6})([\/\w \.-]*)*\/?$/)[2]
   end
 
+  # method to recover a json containing Clearbit's data points
+  def clearbit_enrichment
+    domain_name = self.format_website_url
+    Clearbit.key = ENV['CLEARBIT_KEY']
+    company = Clearbit::Enrichment::Company.find(domain: domain_name)
+  end
 end

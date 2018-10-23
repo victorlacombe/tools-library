@@ -40,7 +40,7 @@
 
   .card-components-sub-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   #card-components-center {
@@ -65,12 +65,12 @@
 /*---------------------------- CARD RESPONSIVENESS ---------------------------*/
 
 
-/*@media (width: 800px) {
+@media (width: 800px) {
   .show-card-components {
-    grid-template-columns: 1fr;
+    grid-template-columns: 0fr;
     grid-template-rows: 3fr;
   }
-}*/
+}
 
 
 
